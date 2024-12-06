@@ -1,35 +1,45 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Галерея - Сторінка 2</title>
+    <title>Галерея</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background: #ececec;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em 0;
+            background-color: #4CAF50;
+            color: white;
             text-align: center;
+            padding: 1em 0;
+        }
+
+        header nav {
+            margin-top: 10px;
         }
 
         header nav a {
-            color: #fff;
-            margin: 0 1em;
+            color: white;
             text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            cursor: pointer;
         }
 
         header nav a:hover {
             text-decoration: underline;
         }
 
-        main {
+        .container {
+            flex: 1;
             padding: 2em;
             text-align: center;
         }
@@ -38,59 +48,102 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1em;
-            justify-items: center;
+            justify-content: center;
+            margin-top: 20px;
         }
 
         .gallery img {
             width: 100px;
             height: 100px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            transition: transform 0.3s;
             object-fit: cover;
+            border: 3px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
         .gallery img:hover {
             transform: scale(1.1);
-            border-color: #007bff;
+            border-color: #4CAF50;
         }
 
         footer {
             background-color: #333;
-            color: #fff;
+            color: white;
             text-align: center;
             padding: 1em 0;
         }
+
+        .section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
     </style>
+    <script>
+        function switchPage(pageId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        window.onload = () => {
+            switchPage('page1'); // Відкрити першу сторінку за замовчуванням
+        };
+    </script>
 </head>
 <body>
     <header>
-        <h1>Галерея - Сторінка 2</h1>
+        <h1>Галерея</h1>
         <nav>
-            <a href="index.html">Сторінка 1</a>
-            <a href="page2.html">Сторінка 2</a>
+            <a onclick="switchPage('page1')">Сторінка 1</a>
+            <a onclick="switchPage('page2')">Сторінка 2</a>
         </nav>
     </header>
 
-    <main>
-        <section class="gallery">
-            <img src="https://via.placeholder.com/100" alt="Зображення 1">
-            <img src="https://via.placeholder.com/100" alt="Зображення 2">
-            <img src="https://via.placeholder.com/100" alt="Зображення 3">
-            <img src="https://via.placeholder.com/100" alt="Зображення 4">
-            <img src="https://via.placeholder.com/100" alt="Зображення 5">
-            <img src="https://via.placeholder.com/100" alt="Зображення 6">
-            <img src="https://via.placeholder.com/100" alt="Зображення 7">
-            <img src="https://via.placeholder.com/100" alt="Зображення 8">
-            <img src="https://via.placeholder.com/100" alt="Зображення 9">
-            <img src="https://via.placeholder.com/100" alt="Зображення 10">
-            <img src="https://via.placeholder.com/100" alt="Зображення 11">
-            <img src="https://via.placeholder.com/100" alt="Зображення 12">
-        </section>
-    </main>
+    <div class="container">
+        <!-- Сторінка 1 -->
+        <div id="page1" class="section">
+            <h2>Ласкаво просимо до галереї! (Сторінка 1)</h2>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/100" alt="Зображення 1">
+                <img src="https://via.placeholder.com/100" alt="Зображення 2">
+                <img src="https://via.placeholder.com/100" alt="Зображення 3">
+                <img src="https://via.placeholder.com/100" alt="Зображення 4">
+                <img src="https://via.placeholder.com/100" alt="Зображення 5">
+                <img src="https://via.placeholder.com/100" alt="Зображення 6">
+                <img src="https://via.placeholder.com/100" alt="Зображення 7">
+                <img src="https://via.placeholder.com/100" alt="Зображення 8">
+                <img src="https://via.placeholder.com/100" alt="Зображення 9">
+                <img src="https://via.placeholder.com/100" alt="Зображення 10">
+                <img src="https://via.placeholder.com/100" alt="Зображення 11">
+                <img src="https://via.placeholder.com/100" alt="Зображення 12">
+            </div>
+        </div>
+
+        <!-- Сторінка 2 -->
+        <div id="page2" class="section">
+            <h2>Перегляньте ще більше зображень! (Сторінка 2)</h2>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/100" alt="Зображення 13">
+                <img src="https://via.placeholder.com/100" alt="Зображення 14">
+                <img src="https://via.placeholder.com/100" alt="Зображення 15">
+                <img src="https://via.placeholder.com/100" alt="Зображення 16">
+                <img src="https://via.placeholder.com/100" alt="Зображення 17">
+                <img src="https://via.placeholder.com/100" alt="Зображення 18">
+                <img src="https://via.placeholder.com/100" alt="Зображення 19">
+                <img src="https://via.placeholder.com/100" alt="Зображення 20">
+                <img src="https://via.placeholder.com/100" alt="Зображення 21">
+                <img src="https://via.placeholder.com/100" alt="Зображення 22">
+                <img src="https://via.placeholder.com/100" alt="Зображення 23">
+                <img src="https://via.placeholder.com/100" alt="Зображення 24">
+            </div>
+        </div>
+    </div>
 
     <footer>
-        <p>© 2024 Галерея</p>
+        <p>© 2024 Галерея. Всі права захищені.</p>
     </footer>
 </body>
 </html>
