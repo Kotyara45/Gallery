@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <style>
+        /* Стилі сайту */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header nav a {
+            color: #fff;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+
+        .text-section {
+            margin-bottom: 2em;
+        }
+
+        input {
+            padding: 0.5em;
+            margin-right: 0.5em;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .gallery {
+            margin-top: 2em;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+
+        .image-container img {
+            max-width: 200px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+            border-color: #007bff;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        // Логіка сайту
+        function displayInput() {
+            const userInput = document.getElementById('user-input').value;
+            const output = document.getElementById('output');
+            output.textContent = `Ви ввели: ${userInput}`;
+        }
+
+        function switchPage(page) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(page).style.display = 'block';
+        }
+
+        window.onload = () => {
+            switchPage('home');
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Галерея</h1>
+        <nav>
+            <a href="#" onclick="switchPage('home')">Головна</a>
+            <a href="#" onclick="switchPage('gallery')">Галерея</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Головна сторінка -->
+        <section id="home">
+            <div class="text-section">
+                <h2>Введіть текст</h2>
+                <input type="text" id="user-input" placeholder="Введіть ваш текст">
+                <button onclick="displayInput()">Показати текст</button>
+                <p id="output"></p>
+            </div>
+        </section>
+
+        <!-- Сторінка галереї -->
+        <section id="gallery">
+            <h2>Галерея зображень</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/200" alt="Зображення 1">
+                <img src="https://via.placeholder.com/200" alt="Зображення 2">
+                <img src="https://via.placeholder.com/200" alt="Зображення 3">
+                <img src="https://via.placeholder.com/200" alt="Зображення 4">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Галерея</p>
+    </footer>
+</body>
+</html>
