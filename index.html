@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Галерея</title>
+    <title>Галерея - Сторінка 2</title>
     <style>
-        /* Стилі сайту */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -35,46 +34,23 @@
             text-align: center;
         }
 
-        .text-section {
-            margin-bottom: 2em;
-        }
-
-        input {
-            padding: 0.5em;
-            margin-right: 0.5em;
-        }
-
-        button {
-            padding: 0.5em 1em;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
         .gallery {
-            margin-top: 2em;
-        }
-
-        .image-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 1em;
+            justify-items: center;
         }
 
-        .image-container img {
-            max-width: 200px;
+        .gallery img {
+            width: 100px;
+            height: 100px;
             border: 2px solid #ddd;
             border-radius: 8px;
             transition: transform 0.3s;
+            object-fit: cover;
         }
 
-        .image-container img:hover {
+        .gallery img:hover {
             transform: scale(1.1);
             border-color: #007bff;
         }
@@ -84,59 +60,32 @@
             color: #fff;
             text-align: center;
             padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
     </style>
-    <script>
-        // Логіка сайту
-        function displayInput() {
-            const userInput = document.getElementById('user-input').value;
-            const output = document.getElementById('output');
-            output.textContent = `Ви ввели: ${userInput}`;
-        }
-
-        function switchPage(page) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.style.display = 'none');
-            document.getElementById(page).style.display = 'block';
-        }
-
-        window.onload = () => {
-            switchPage('home');
-        };
-    </script>
 </head>
 <body>
     <header>
-        <h1>Галерея</h1>
+        <h1>Галерея - Сторінка 2</h1>
         <nav>
-            <a href="#" onclick="switchPage('home')">Головна</a>
-            <a href="#" onclick="switchPage('gallery')">Галерея</a>
+            <a href="index.html">Сторінка 1</a>
+            <a href="page2.html">Сторінка 2</a>
         </nav>
     </header>
 
     <main>
-        <!-- Головна сторінка -->
-        <section id="home">
-            <div class="text-section">
-                <h2>Введіть текст</h2>
-                <input type="text" id="user-input" placeholder="Введіть ваш текст">
-                <button onclick="displayInput()">Показати текст</button>
-                <p id="output"></p>
-            </div>
-        </section>
-
-        <!-- Сторінка галереї -->
-        <section id="gallery">
-            <h2>Галерея зображень</h2>
-            <div class="image-container">
-                <img src="https://via.placeholder.com/200" alt="Зображення 1">
-                <img src="https://via.placeholder.com/200" alt="Зображення 2">
-                <img src="https://via.placeholder.com/200" alt="Зображення 3">
-                <img src="https://via.placeholder.com/200" alt="Зображення 4">
-            </div>
+        <section class="gallery">
+            <img src="https://via.placeholder.com/100" alt="Зображення 1">
+            <img src="https://via.placeholder.com/100" alt="Зображення 2">
+            <img src="https://via.placeholder.com/100" alt="Зображення 3">
+            <img src="https://via.placeholder.com/100" alt="Зображення 4">
+            <img src="https://via.placeholder.com/100" alt="Зображення 5">
+            <img src="https://via.placeholder.com/100" alt="Зображення 6">
+            <img src="https://via.placeholder.com/100" alt="Зображення 7">
+            <img src="https://via.placeholder.com/100" alt="Зображення 8">
+            <img src="https://via.placeholder.com/100" alt="Зображення 9">
+            <img src="https://via.placeholder.com/100" alt="Зображення 10">
+            <img src="https://via.placeholder.com/100" alt="Зображення 11">
+            <img src="https://via.placeholder.com/100" alt="Зображення 12">
         </section>
     </main>
 
